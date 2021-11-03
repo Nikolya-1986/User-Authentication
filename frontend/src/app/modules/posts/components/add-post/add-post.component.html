@@ -1,0 +1,65 @@
+<section class="addPost__container addPost">
+    <h1>
+        {{ title }}
+    </h1>
+    <form 
+        [formGroup]="formPost"
+        (ngSubmit)="createPosts()"
+        novalidate
+        >
+
+        <div>
+            <input
+                type="text"
+                name="Title"
+                placeholder="Title"
+                formControlName="postTitle"
+                [(ngModel)]="titlePost"
+            />
+        </div>
+
+        <div>
+            <textarea 
+                placeholder="Description" 
+                name="Description" 
+                formControlName="postDescription"
+                [(ngModel)]="descriptionPost"
+            ></textarea> 
+        </div>
+
+        <div class="addPost__select">
+            <select 
+                name="Membership" 
+                formControlName="postMembership" 
+                [(ngModel)]="membershipPost"
+                >
+                <option value="">
+                    Select Membership:
+                </option>
+                <option 
+                    *ngFor="let item of membership"
+                    [value]="item"
+                    >
+                    {{ item }}
+                </option>
+            </select>
+        </div>
+
+        <div>
+            <button 
+                class="disabled"
+                type="submit" 
+                value="Create post" 
+                [disabled]="formPost.invalid"  
+                >
+                Create post
+            </button>
+            <!-- <input
+                class="disabl"
+                type="submit" 
+                value="Create post" 
+                [disabled]="formPost.invalid"            
+            /> -->
+        </div>
+    </form>
+</section>

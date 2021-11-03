@@ -1,0 +1,13 @@
+.posts {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 25px;
+    position: relative;
+
+    &__loading-icon {
+        height: 50px;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+    }
+}

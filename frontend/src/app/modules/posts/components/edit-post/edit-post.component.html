@@ -1,0 +1,62 @@
+<section class="editPost__container editPost">
+    <h1>
+        {{ title }}
+    </h1>
+
+    <form 
+        [formGroup]="formEditPost"
+        (ngSubmit)="editPosts()"
+        novalidate
+        >
+
+        <div>
+            <input
+                type="text"
+                name="TitleEdit"
+                placeholder="Title edit"
+                formControlName="postEditTitle"
+                [(ngModel)]="titleEditPost"
+            />
+        </div>
+
+        <div>
+            <textarea 
+                placeholder="Description edit" 
+                name="DescriptionEdit" 
+                formControlName="postEditDescription"
+                [(ngModel)]="descriptionEditPost"
+                >
+            </textarea> 
+        </div>
+
+        <div class="editPost__select">
+            <select 
+                name="MembershipEdit" 
+                formControlName="postEditMembership" 
+                [(ngModel)]="membershipEditPost"
+                >
+                <option value="">
+                    Select Membership:
+                </option>
+                <option 
+                    *ngFor="let item of membershipEdit"
+                    [value]="item"
+                    >
+                    {{ item }}
+                </option>
+            </select>
+        </div>
+
+        <div>
+            <button 
+                class="disabled"
+                type="submit" 
+                value="Edit post" 
+                [disabled]="!formEditPost.valid"  
+                >
+                Edit post
+            </button>
+        </div>
+
+    </form>
+</section>

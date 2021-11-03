@@ -1,0 +1,41 @@
+<ng-content></ng-content>
+<section class="listPost__container listPost">
+    <h2>
+        {{ title }}
+    </h2>
+
+    <div class="listPost__wrapper">
+        <p *ngIf="!posts?.length">
+            No posts to show...
+        </p>
+        <ul *ngIf="posts !== undefined && posts?.length !== 0">
+            <li *ngFor="let post of posts; let i = index">
+                <app-item-post
+                    [post]="post"
+                    [index]="i+1"
+                    (onOpenModal)="openModal(post.id, post)"
+                    (onDeletePost)="deletePost(post)"                 
+                    >
+
+                    <app-modal 
+                        *ngIf="post.id"
+                        [(visible)]="showDialog"
+                        >
+                        <app-edit-post
+                            [post]="post"
+                            (onEditPosts)="editPost(post)"
+                            >
+                        </app-edit-post>
+                    </app-modal>
+                </app-item-post>
+                <hr>
+            </li> 
+        </ul>
+    </div>
+
+</section>
+<!-- <ng-template 
+    appRefModalWindow
+    >
+    <app-edit-post></app-edit-post>
+</ng-template> -->

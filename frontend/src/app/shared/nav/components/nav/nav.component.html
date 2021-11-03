@@ -1,0 +1,58 @@
+<section class="navigation__container navigation">
+    <nav class="navigation__wrapper">
+        <ul class="navigation__list">
+            <li 
+                routerLinkActive="active" 
+                [routerLinkActiveOptions]="{exact:true}"
+                >
+                <a routerLink="">
+                    Home
+                </a>
+            </li>
+            <li routerLinkActive="active" >
+                <a routerLink="/posts">
+                    Posts
+                </a>
+            </li>
+            <li routerLinkActive="active" >
+                <a routerLink="/shops">
+                    Shops
+                </a>
+            </li>
+        </ul>
+        
+        <ul 
+            class="navigation__list"
+            *ngIf="!authenticated"
+            >
+            <li
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact:true}"
+                >
+                <a routerLink="/registration">
+                    Registration
+                </a>
+            </li>
+            <li routerLinkActive="active">
+                <a routerLink="/login">
+                    Login
+                </a>
+            </li>
+        </ul>
+
+        <ul 
+            class="navigation__list"
+            >
+            <li routerLinkActive="active">
+                <a 
+                    routerLink="/login"
+                    (click)="logout()"
+                    >
+                    Logout
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+</section>
+

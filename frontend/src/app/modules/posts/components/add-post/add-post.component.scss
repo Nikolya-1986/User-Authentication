@@ -1,0 +1,66 @@
+.addPost {
+
+    // margin: 20px 10px;
+
+    textarea, input, select{
+        width: 100%;
+        margin-bottom: 15px;
+        &:focus{
+            outline: none;
+        };
+        padding: 5px 10px;
+    };
+
+    input[type="text"]{
+        border: 3px solid var(--primary-color_2);
+        height: 40px;
+    };
+
+    textarea{
+        border: 3px solid var(--dark-color_2);
+        height: 60px;
+    };
+
+    &__select {
+
+        select {
+            display: block;
+            padding: .75rem 2.5rem .75rem 1rem;
+            background: none; 
+            border: 1px solid #ccc; 
+            border-radius: 3px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            font-family: inherit;
+            font-size: 1rem;
+            color: #444;
+    
+            &::after {
+                content: "▼";
+                display: block;
+                border-style: solid;
+                border-width: 6px 5px 0 5px;
+                border-color: #000 transparent transparent transparent;
+                pointer-events: none;
+                position: absolute;
+                top: 0;
+                right: 1rem;
+                z-index: 1;
+                margin-top: -3px;
+            }
+        }
+    }
+    
+
+    // button[type="submit"]{
+    //     background: var(--primary-color_2);
+    //     color: var(--light-color);
+    //     width: auto;
+    //     border: none;
+        
+    //     &:hover{
+    //         cursor: pointer;
+    //     }
+    // }
+}

@@ -1,0 +1,20 @@
+.navigation {
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+
+        li {
+            padding-right: 1rem;
+        }
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.active a {
+    color: var(--primary-color);
+}

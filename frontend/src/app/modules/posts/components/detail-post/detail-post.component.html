@@ -1,0 +1,32 @@
+<section class="detailPost__container detailPost">
+    <h1>
+        {{ title }}
+    </h1>
+
+    <h2>
+        Important information: {{ statisticalInformation  }}
+    </h2>
+    <ul>
+        <li>
+            Date created: {{ postDetail.data }}
+        </li>
+        <li>
+            Your secret key of this post: {{ postDetail.id }}
+        </li>
+        <li>
+            Title post: {{ postDetail.title }}
+        </li>
+        <li>
+            Discription post: {{ postDetail.body }}
+        </li>
+        <li>
+            Importance post: {{ postDetail.membership }}
+        </li>
+    </ul>
+    <button 
+        type="button"
+        routerLink="/posts"
+        >
+        Back on posts
+    </button>
+</section>

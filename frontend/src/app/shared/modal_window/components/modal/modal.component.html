@@ -1,0 +1,37 @@
+<section>
+    <div [@dialog] 
+        class="dialog"
+        *ngIf="visible" 
+        >
+        <ng-content></ng-content>
+        <button 
+          class="dialog__close-btn" 
+          *ngIf="closable" 
+          (click)="close()" 
+          aria-label="Close"
+          >
+          X
+        </button>
+    </div>
+    <div 
+      class="overlay" 
+      *ngIf="visible"  
+      (click)="close()"
+      >
+    </div>
+
+    <!-- <div class="backdrop"></div>
+
+    <div class="modal">
+      <nav class="navbar">
+        <h1>{{ title }}</h1>
+      </nav>
+
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, sint.
+      </p>
+
+      <button class="btn" (click)="close.emit()">Close</button>
+    </div> -->
+
+</section>

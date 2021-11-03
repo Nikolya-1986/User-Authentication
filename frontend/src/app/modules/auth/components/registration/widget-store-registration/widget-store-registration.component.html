@@ -1,0 +1,17 @@
+<section class="widgetRegistration__container">
+    <app-display-registration
+        (onRegistration)="registration($event)"
+        [errorEmailRegistered]="errorEmailRegistered"
+        >
+
+        <div 
+            class="alert alert-danger"
+            *ngIf="authService.error$ | async as errorBackend"
+            >
+            <p>
+                {{ errorBackend }}
+            </p>
+        </div>
+
+    </app-display-registration>
+</section>

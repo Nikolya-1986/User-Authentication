@@ -1,0 +1,22 @@
+<section>
+    <app-add-post
+        (onCreatePost)="createPost($event)"
+        >
+    </app-add-post>
+    <app-list-posts
+        [posts]="posts$ | async"
+        [error]="error$ | async"
+        (onDeletePost)="deletePost($event)"
+        (onEditPost)="editPost($event)"
+        (onOpenModal)="openModal($event)"
+        >
+
+        <img
+            class="posts__loading-icon"  
+            *ngIf="loadingImage$ | async" 
+            src="assets/images/sand-clock.png"
+        />
+        
+    </app-list-posts>
+
+</section>

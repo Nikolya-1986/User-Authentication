@@ -1,0 +1,16 @@
+<section class="widgetLogin__container">
+    <app-display-login
+        (onLogin)="login($event)"
+        >
+
+        <div 
+            class="alert alert-danger"
+            *ngIf="authService.error$ | async as errorBackend"
+            > <!-- Значение которое есть в внутри стрима с помощью  as приевратить в переменную error -->
+            <p>
+                {{ errorBackend }}
+            </p>
+        </div>
+
+    </app-display-login>
+</section>

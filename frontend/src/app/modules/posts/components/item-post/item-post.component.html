@@ -1,0 +1,36 @@
+<section class="itemPost__container itemPost">
+    <h3>
+        Post №{{ index }}
+    </h3>
+    <p>
+        Post's date: {{ post.data | date:'medium' }}
+    </p>
+    <p>
+        Post's name: {{ post.title }}
+    </p>
+    <p>
+        Post's discription: {{ post.body }}
+    </p>
+    <p>
+        Importance post: {{ post.membership }}
+    </p>
+    <span class="item item__one">                      
+        <span (click)="deletePost()">
+            &#10006;
+        </span>                        
+    </span>
+    <span class="item item__two">
+        <span (click)="openModal()">
+            &#9998;
+        </span>
+    </span>
+    <span class="item item__three">
+        <span (click)="delailPost(post.id)">
+            &#10010;
+        </span>
+        <!-- <span [routerLink]="['/posts', post.id]">
+            &#10010;
+        </span> -->
+    </span>
+</section>
+<ng-content></ng-content>
